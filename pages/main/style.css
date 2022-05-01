@@ -1,5 +1,10 @@
 :root {
-    --color-primay: #F1CDB3;
+    --font-primary: Georgia, 'Times New Roman', Times, serif;
+    --font-secondary: Arial, Helvetica, sans-serif;
+    --color-primary: #F1CDB3;
+    --color-dark-s: #CDCDCD;
+    --color-dark-3xl: #292929;
+    --color-light-s: #FAFAFA;
 }
 
 * {
@@ -15,9 +20,164 @@ header, main, footer {
 
 .wrapper {
     width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto;    
+}
+
+header {
+    background-image: url(../../assets/images/background-gradient.png);
+    background-size: 1280px;
+    padding-top: 60px;
+}
+
+header .wrapper {
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-main {
-    color: var(--color-primay);
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 2rem;    
+    line-height: 110%;    
+    letter-spacing: 0.06em;    
+    color: var(--color-primary);
+    display: inline-block;
+    margin-bottom: 0.625rem;
+}
+
+.logo-sub {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 0.9375rem;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    display: inline-block;
+}
+
+.main-menu {
+    list-style-type: none;
+}
+
+.main-menu li {
+    display: inline-block;
+    margin-left: 2.1875rem;
+}
+
+.main-menu mark {
+    background-color: unset;       
+}
+
+.main-menu mark li {
+    border-bottom: 3px solid var(--color-primary); 
+}
+
+.main-menu mark a:link {
+    color: var(--color-light-s);
+}
+
+.main-menu mark a:visited {
+    color: var(--color-light-s);
+}
+
+.main-menu mark a:hover {
+    color: var(--color-light-s);
+}
+
+.main-menu mark a:active {
+    color: var(--color-light-s);
+}
+
+.main-menu a:link {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 160%;    
+    color: var(--color-dark-s);
+    text-decoration: none;  
+}
+
+.main-menu a:visited {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 160%;    
+    color: var(--color-dark-s);
+    text-decoration: none;   
+}
+
+.main-menu a:hover {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 160%;    
+    color: var(--color-light-s);
+    text-decoration: none;   
+}
+
+.main-menu a:active {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 160%;    
+    color: var(--color-dark-s);
+    text-decoration: none;   
+}
+
+
+main {
+    background-image: url(../../assets/images/background-gradient.png);
+    background-size: 1280px;
+}
+
+.start-screen-content {
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.start-screen-content .content {
+    width: 38.333%;
+    margin-right: 2.625rem;
+}
+
+.content h2 {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 2.75rem;
+    line-height: 130%;      
+    color: #FFFFFF;
+    display: inline-block;
+    margin-bottom: 2.625rem;   
+}
+
+.content p {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 160%;      
+    color: var(--color-dark-s);
+    display: inline-block;
+    margin-bottom: 2.625rem;   
+}
+
+.button-primary {
+    background-color: var(--color-primary);
+    width: 12.9375rem;
+    height: 3.25rem;
+    border-radius: 1.625rem;
+    border: 0;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;      
+    color: var(--color-dark-3xl);
 }
