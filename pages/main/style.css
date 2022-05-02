@@ -14,7 +14,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0;    
 }
 
 header, main, footer {
@@ -62,7 +62,6 @@ h1 a:link, h1 a:visited, h1 a:hover, h1 a:active  {
     text-decoration: none;    
     color: var(--color-primary);
     display: inline-block;
-    margin-bottom: 0.625rem;
 }
 
 h1 a:hover {
@@ -103,8 +102,9 @@ h1 a:hover {
     background-color: unset;       
 }
 
-.main-menu mark li {
-    border-bottom: 3px solid var(--color-primary); 
+.main-menu li mark {
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 2px;
 }
 
 .main-menu mark a:link {
@@ -196,13 +196,20 @@ h1 a:hover {
     height: 3.25rem;
     border-radius: 1.625rem;
     border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-primary a:link, .button-primary a:visited, .button-primary a:hover, .button-primary a:active{    
     font-family: var(--font-primary);
     font-weight: 400;
     font-size: 1.0625rem;
     line-height: 130%;
     letter-spacing: 0.06em;      
     color: var(--color-dark-3xl);
-    cursor: pointer;
+    text-decoration: none;
 }
 
 .puppy {
@@ -333,6 +340,15 @@ h1 a:hover {
     border-radius: 100px;
     margin-bottom: 1.875rem;
     cursor: pointer;
+}
+
+.our-pets .button-primary a:link, .our-pets .button-primary a:visited, .our-pets .button-primary a:hover, .our-pets .button-primary a:active {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.0625rem;    
+    line-height: 130%;    
+    letter-spacing: 0.06em;    
+    color: var(--color-dark-3xl);
 }
 
 .our-pets .button-primary {
