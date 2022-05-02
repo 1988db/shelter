@@ -1,1 +1,1 @@
-https://1988db.github.io/shelter/
+https://1988db.github.io/shelter/pages/main/index.html
