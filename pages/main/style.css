@@ -2,7 +2,8 @@
     --font-primary: Georgia, 'Times New Roman', Times, serif;
     --font-secondary: Arial, Helvetica, sans-serif;
     --color-primary: #F1CDB3;    
-    --color-dark-s: #CDCDCD;
+    --color-dark-s: #CDCDCD;    
+    --color-dark-m: #B2B2B2;
     --color-dark-l: #545454;
     --color-dark-xl: #4C4C4C;
     --color-dark-3xl: #292929;
@@ -38,7 +39,7 @@ section {
     align-items: center;
 }
 
-.about, .our-pets, .help {
+.about, .our-pets, .help, .donations {
     padding-top: 80px;
     padding-bottom: 100px;
 }
@@ -199,7 +200,7 @@ section {
     margin-left: 10%;
 }
 
-.about-description h3, .our-pets h3, .help h3 {
+.about-description h3, .our-pets h3, .help h3, .donation-content h3 {
     font-family: var(--font-primary);
     font-weight: 400;
     font-size: 2.185rem;    
@@ -345,4 +346,63 @@ section {
     line-height: 115%;    
     letter-spacing: 0.06em;    
     color: var(--color-dark-l);
+}
+
+.donations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-light-l);
+}
+
+.donation-content {
+    margin-left: 1.875rem;
+    width: 23.75rem;
+}
+
+.donation-content h3 {
+    margin-bottom: 1.25rem;
+}
+
+.donation-content h5 {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 0.9375rem;    
+    line-height: 110%;    
+    letter-spacing: 0.06em;    
+    color: var(--color-dark-l);
+    margin-bottom: 1.25rem;   
+}
+
+.credit-card {
+    padding: 10px 15px;
+    border-radius: 9px;
+    background-color: var(--color-primary);
+    display:  flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 359px;
+    margin-bottom: 1.25rem;
+}
+
+.credit-card img {
+    margin-right: 15px;    
+}
+
+.credit-card span {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.25rem;    
+    line-height: 115%;    
+    letter-spacing: 0.06em;    
+    color: var(--color-dark-l);
+}
+
+.legal-info {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 0.75rem;    
+    line-height: 150%;
+    font-style: italic;     
+    color: var(--color-dark-m);
 }
