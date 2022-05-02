@@ -200,7 +200,7 @@ section {
     margin-left: 10%;
 }
 
-.about-description h3, .our-pets h3, .help h3, .donation-content h3 {
+.about-description h3, .our-pets h3, .help h3, .donation-content h3, footer h3 {
     font-family: var(--font-primary);
     font-weight: 400;
     font-size: 2.185rem;    
@@ -405,4 +405,108 @@ section {
     line-height: 150%;
     font-style: italic;     
     color: var(--color-dark-m);
+}
+
+.footer-section {
+    padding-top: 2.5rem;    
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: url(../../assets/images/background-gradient.png);
+    background-size: 1280px;
+}
+
+.footer-section > div {
+    margin-right: 160px;
+}
+
+footer h3 {
+    color: #FFFFFF;
+    margin-bottom: 0; 
+    display: block;   
+}
+
+.contacts, .locations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+.contact-wrapper, .location-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.contact-wrapper:first-of-type{
+    margin-top: 2.6875rem;
+    margin-bottom: 44px;
+}
+
+.location-wrapper:first-of-type {
+    margin-top: 2.5rem;
+    margin-bottom: 32px;
+}
+
+.contact-wrapper img {
+    width: 40px;
+    margin-right: 1.25rem;
+}
+
+.location-wrapper img {
+    width: 22px;
+    margin-right: 1.25rem;
+}
+
+.footer-puppy {
+    width: 300px;
+    height: 310px;
+}
+
+footer a:link {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.25rem;    
+    line-height: 115%;    
+    letter-spacing: 0.06em;
+    text-decoration: none;  
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+}
+
+footer a:visited {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.25rem;    
+    line-height: 115%;    
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--color-primary);
+    margin-bottom: 0.625rem;
+}
+
+footer a:hover {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.25rem;    
+    line-height: 115%;    
+    letter-spacing: 0.06em;
+    text-decoration: none;    
+    color: var(--color-light-s);    
+    margin-bottom: 0.625rem;
+}
+
+footer a:active {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.25rem;    
+    line-height: 115%;    
+    letter-spacing: 0.06em;
+    text-decoration: none;    
+    color: var(--color-primary);    
+    margin-bottom: 0.625rem;
+}
+
+.boston {
+    width: 254px;
 }
