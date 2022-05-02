@@ -162,12 +162,16 @@ h1 a:hover {
 .start-screen-content {    
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;    
 }
 
 .start-screen-content .start-content {
     width: 38.333%;
     margin-right: 2.625rem;
+}
+
+.start-content {
+    margin-bottom: 243px;
 }
 
 .start-content h2 {
@@ -323,7 +327,7 @@ h1 a:hover {
     line-height: 115%;    
     letter-spacing: 0.06em;    
     color: var(--color-dark-l);
-    margin-bottom: 2.8125rem;    
+    margin-bottom: 1.875rem;    
 }
 
 .button-secondary {
@@ -367,8 +371,7 @@ h1 a:hover {
 
 .help {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column;   
     align-items: center;
 }
 
@@ -378,7 +381,7 @@ h1 a:hover {
     justify-content: space-between;
     align-items: center;    
     height: 113px;    
-    margin-right: 7.5rem;
+    margin-right: 120px;
     text-align: center;
 }
 
