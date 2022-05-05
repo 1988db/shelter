@@ -179,6 +179,17 @@ h3 {
     align-items: center;
     justify-content: center;
     background-color: var(--color-light-s);
+    transition: all 0.5s;
+}
+
+.card:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0.5em var(--color-dark-s);       
+}
+
+.card:hover .learn-more-btn {
+    border: 4px solid var(--color-primary);
+    background-color: #FFFFFF;
 }
 
 .card img {
@@ -216,6 +227,9 @@ h3 {
     align-items: center;
 }
 
+.learn-more-btn:hover {    
+    box-shadow: 0 0 0.5em var(--color-dark-s);    
+}
 .buttons-container {
     display: flex;
     column-gap: 20px;
@@ -235,6 +249,17 @@ h3 {
     letter-spacing: 0.06em;
     text-align: center;
     color: var(--color-dark-s);
+    cursor: pointer;
+}
+
+.slider-nav-button:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0.5em var(--color-dark-s);
+}
+
+.disabled:hover {
+    background-color: var(--color-light-s);    
+    cursor: not-allowed;
 }
 
 .page-num, .next, .end {
@@ -244,4 +269,99 @@ h3 {
 
 .page-num {
     background-color: var(--color-primary);
+}
+
+footer {
+    padding: 40px 40px 0;
+    background-image: url(../../assets/images/background-gradient.png);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;    
+    column-gap: 160px;
+    line-height: 0;      
+}
+
+footer h3 {
+    color: #FFFFFF;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+footer h4 {
+    display: inline-block;
+    margin: 0;
+}
+
+footer a:link {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+footer a:visited {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+footer a:hover {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+footer a:active {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+.contacts, .location {
+    align-items: center;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contacts {
+    row-gap: 43px;   
+}
+
+.location {
+    row-gap: 33px;
+}
+
+.boston {
+    width: 253px;
+}
+.contacts img {
+    width: 40px;
+}
+
+.location img {
+    width: 22px;
+}
+
+.email, .phone, .address {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.footer-puppy {
+    width: 300px;
+    height: 310px;
 }
