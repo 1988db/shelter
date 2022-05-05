@@ -170,6 +170,7 @@ h3 {
     flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 30px;
+    margin-bottom: 60px;
 }
 
 .card {
@@ -217,4 +218,30 @@ h3 {
 
 .buttons-container {
     display: flex;
+    column-gap: 20px;
+}
+
+.slider-nav-button {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border: 2px solid var(--color-dark-s);
+    border-radius: 50%;
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: var(--color-dark-s);
+}
+
+.page-num, .next, .end {
+    border-color: var(--color-primary);
+    color: black;
+}
+
+.page-num {
+    background-color: var(--color-primary);
 }
