@@ -1,3 +1,17 @@
+@font-face {
+    font-family: Georgia;
+    src: url(../../assets/fonts/Georgia/Georgia.ttf);
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: Arial;
+    src: url(../../assets/fonts/Arial/ArialNarrow.ttf);
+    font-weight: normal;
+    font-style: normal;
+  }
+
 :root {
     --font-primary: Georgia, 'Times New Roman', Times, serif;
     --font-secondary: Arial, Helvetica, sans-serif;
