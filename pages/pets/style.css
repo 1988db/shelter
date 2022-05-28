@@ -3,14 +3,14 @@
     src: url(../../assets/fonts/Georgia/Georgia.ttf);
     font-weight: normal;
     font-style: normal;
-  }
+}
 
-  @font-face {
+@font-face {
     font-family: Arial;
     src: url(../../assets/fonts/Arial/ArialMT.ttf);
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 :root {
     --font-primary: Georgia, 'Times New Roman', Times, serif;
@@ -73,7 +73,7 @@ header {
 
 h1 {
     font-family: var(--font-primary);
-    font-size: 2rem;
+    font-size: 1.98rem;
     font-weight: 400;
     line-height: 110%;
     letter-spacing: 0.06em;
@@ -107,6 +107,10 @@ h1 a:active {
 
 nav {
     height: 27px;
+}
+
+.burger {
+    display: none;
 }
 
 nav li {
@@ -267,8 +271,9 @@ h3 {
     box-shadow: 0 0 0.5em var(--color-dark-s);
 }
 
-.disabled:hover {
-    background-color: var(--color-light-s);    
+.disabled:hover {    
+    background-color: var(--color-light-l);
+    box-shadow: none;
     cursor: not-allowed;
 }
     
@@ -376,8 +381,82 @@ footer a:active {
     height: 310px;
 }
 
+@media screen and (max-width: 767px) {
+    header, main, footer {
+        width: 100%;       
+    }
 
-@media screen and (max-width: 1279px) {
+    header {
+        padding: 30px 10px;
+    }
+
+    .burger {
+        display: block;
+        width: 30px;
+        height: 22px;
+        margin: 0 43px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    main {
+        padding: 42px 10px;
+    }
+
+    .friends-h3 {
+        font-size: 25px;
+        margin-bottom: 42px;
+    }
+
+    .cards-container {
+        justify-content: center;
+        margin-bottom: 42px;
+    }
+
+    .card:nth-of-type(4), .card:nth-of-type(5), .card:nth-of-type(6), .card:nth-of-type(7), .card:nth-of-type(8) {
+        display: none;
+    }
+
+    .buttons-container {
+        column-gap: 10px;
+    }
+
+    footer {
+        flex-direction: column;        
+        align-items: center;
+        padding: 30px 10px 0;
+    }
+
+    .contacts, .location {        
+        margin-bottom: 40px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .location {
+        row-gap: 40px;
+    }
+
+    footer h3 {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .address {
+        width: 100%;
+    }
+
+    .footer-puppy {
+        width: 260px;
+        height: 269px;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
     header, main, footer {
         width: 100%;       
     }
@@ -394,6 +473,18 @@ footer a:active {
         margin-bottom: 30px;
     }
 
+    .card {
+        width: calc(50% - 20px);
+    }
+
+    .card:nth-last-of-type(7), .card:last-of-type {
+        display: none;
+    }
+
+    .cards-container {
+        margin-bottom: 40px;
+    }
+
     footer {
         padding: 30px 64px 0;
         column-gap: 61px;
@@ -402,6 +493,7 @@ footer a:active {
     }
   
     .contacts, .location {
+        width: calc(50% - 30.5px);
         margin-bottom: 65px;
     }
 
