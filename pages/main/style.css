@@ -850,15 +850,12 @@ footer a:active {
     .contacts, .locations {
         padding-bottom: 40px;
     }
-
-    .contact-wrapper {
-        margin-left: 24px;
+    
+    .contact-wrapper  {
+        justify-content: center;
     }
-
-    .contact-wrapper:nth-of-type(2) {
-        margin-left: 30px;
-    }
-
+    
+    
     .location-wrapper:first-of-type {
         margin-bottom: 40px;
     }
