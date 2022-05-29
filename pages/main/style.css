@@ -70,7 +70,7 @@ section {
 h1 a:link, h1 a:visited, h1 a:hover, h1 a:active  {
     font-family: var(--font-primary);
     font-weight: 400;
-    font-size: 2rem;    
+    font-size: 1.98rem;    
     line-height: 110%;    
     letter-spacing: 0.06em;
     text-decoration: none;    
@@ -101,6 +101,10 @@ h1 a:hover {
     letter-spacing: 0.1em;
     color: #FFFFFF;
     display: inline-block;
+}
+
+.burger {
+    display: none;
 }
 
 .main-menu {
@@ -574,4 +578,28 @@ footer a:active {
 
 .boston {
     width: 254px;
+}
+
+@media screen and (max-width: 767px) {
+
+    
+    header, main, footer {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .header-section {
+        padding: 30px 10px;
+    }
+
+    .burger {
+        display: block;
+        width: 30px;
+        height: 22px;
+        margin: 0 43px;
+    }
+
+    .main-menu {
+        display: none;
+    }
 }
