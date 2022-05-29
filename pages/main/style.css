@@ -602,4 +602,257 @@ footer a:active {
     .main-menu {
         display: none;
     }
+
+    .start-screen-content {
+        padding: 30px 10px 0;
+        flex-direction: column;        
+    }
+
+    .start-screen-content .start-content {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .start-screen-content h2 {
+        font-size: 25px;
+    }
+
+    .button-primary {
+        display: inline-flex;
+        margin: 0;
+        margin-bottom: 105px;
+    }
+
+    .puppy-img {
+        width: 260px;
+        height:271.77px;
+    }
+
+    .about {
+        width: 100%;
+        padding: 42px 25px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-pets {
+        order: 1;
+    }
+
+    .about-pets img {
+        width: 260px;
+        height: 353.6px;
+    }
+
+    .about-description {
+        width: 100%;
+        margin: 0 0 42px;
+        text-align: center;
+    }
+
+    .about-description h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .about-description p {
+        text-align: left;
+    }
+
+    .about-description p:last-child {
+        margin-bottom: 0;
+    }
+
+    .our-pets {
+        padding: 42px 10px;
+        flex-direction: column;
+    }
+
+    .our-pets h3 {
+        font-size: 25px;
+        margin-bottom: 42px;
+    }
+
+    .card-wrapper {
+        width: 100%;
+        order: -1;
+    }
+
+    .card {
+        width: 270px;
+        margin: 0 auto;                  
+    }
+
+    .card-wrapper:nth-child(3), .card-wrapper:nth-child(4) {
+        display: none;
+    }
+
+    .card img {
+        line-height: 0;
+    }
+
+    .slider {
+        width: 100%;
+        margin-bottom: 42px;
+        flex-wrap: wrap;
+        justify-content: space-between;        
+    }
+
+    .our-pets .button-primary {
+        display: inline-flex;
+        margin: 0;        
+    }
+
+    .button-arrow.left {
+        margin: 20px 0 0 58px;        
+    }
+
+    .button-arrow.right {
+        margin: 20px 58px 0 0;
+        flex-grow: 0;
+    }
+
+    .help {
+        padding: 42px 15px;
+    }
+
+    .help h3 {
+        font-size: 25px;
+        margin-bottom: 42px;
+    }
+
+    .list {
+        width: 100%;
+        height: auto;
+        align-items: flex-start;
+        justify-content: flex-start;
+        row-gap: 30px;
+    }
+
+    .help-item {
+        margin: 0;
+        width: 50%;
+        height: 87px;         
+    }
+
+    .help-item h4 {
+        font-size: 15px;
+    }
+
+    .pet-food {
+        width: 39.88px;
+        height: 50px;
+    }
+
+    .transportation {
+        width: 49.96px;
+        height: 50px;
+    }
+
+    .toys {
+        width: 50px;
+        height: 50px;
+    }
+
+    .bowls {
+        width: 50px;
+        height: 47.35px;
+    }
+
+    .shampoos {
+        width: 26.09px;
+        height: 50px;
+    }
+
+    .vitamins {
+        width: 50px;
+        height: 45.13px;
+    }
+
+    .medicines {
+        width: 50px;
+        height: 50px;
+    }
+
+    .collars {
+        width: 50px;
+        height: 43.7px;
+    }
+
+    .sleeping-areas {
+        width: 46.91px;
+        height: 50px;
+    }
+
+    .donations {
+        padding: 42px 10px;
+        flex-direction: column;        
+    }
+
+    .donation-dog {
+        order: 1;
+        margin: 42px 0 0 0;
+        width: 260px;
+        height: 135px;
+    }
+
+    .donation-content {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
+
+    .donation-content h3 {
+        font-size: 25px;
+        text-align: center;        
+    }
+
+    .donation-content h5 {
+        letter-spacing: normal;
+    }
+
+    .credit-card {
+        display: inline-flex;
+        width: 281px;
+    }
+
+    .legal-info {
+        display: block;
+        text-align:justify;         
+    }
+
+    .credit-card span {
+        font-size: 15px;
+    }
+
+    .footer-section {
+        flex-direction: column;
+        padding: 30px 10px 0;
+        align-items: center;
+    }
+
+    .footer-section > div {
+        margin: 0;
+    }
+
+    .contacts h3, .locations h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .contacts, .locations {
+        padding-bottom: 40px;
+    }
+
+    .location-wrapper:first-of-type {
+        margin-bottom: 40px;
+    }
+
+    .footer-puppy {
+        width: 260px;
+        height: 269px;
+    }
 }
