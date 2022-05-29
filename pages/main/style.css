@@ -841,6 +841,7 @@ footer a:active {
     .contacts h3, .locations h3 {
         font-size: 25px;
         text-align: center;
+        margin: 0 15px;
     }
 
     .contacts, .locations {
