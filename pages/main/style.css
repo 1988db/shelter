@@ -662,6 +662,7 @@ footer a:active {
 
     .about-description p {
         text-align: justify;
+        font-size: 15px;
     }
 
     .about-description p:last-child {
