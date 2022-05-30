@@ -265,7 +265,7 @@ h1 a:hover {
 .about-description p {
     font-family: var(--font-secondary);
     font-weight: 400;
-    font-size: 0.9375rem;    
+    font-size: 15px;    
     line-height: 160%;
     color: var(--color-dark-xl);
     display: inline-block;
