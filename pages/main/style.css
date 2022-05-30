@@ -983,4 +983,37 @@ footer a:active {
         width: 56.29px;
         height: 60px;
     }
+
+    .donations {
+        flex-direction: column;
+    }
+
+    .donation-content {
+        margin: 0 0 60px;
+    }
+
+    .donation-dog {
+        order: 1;
+    }
+
+    .footer-section {
+        flex-wrap: wrap;
+        padding: 30px 64px 0;
+        column-gap: 50px;
+    }
+
+    .footer-section > div {        
+        margin: 0;
+    }
+
+    .contacts, .locations {
+        margin: 0;
+        width: calc(50% - 61px / 2);
+        align-items: flex-start;
+        padding-bottom: 65px;
+    }
+
+    .location-wrapper:first-of-type {
+        margin-top: 33px;
+    }
 }
