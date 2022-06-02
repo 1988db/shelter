@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
     <link rel="stylesheet" href="style.css">
-    <script src="../../assets/scripts/main.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>        
         <section class="header-section">
             <div class="logo"><h1 class="logo-main"><a href="#">Cozy House</a></h1><p class="logo-sub">Shelter for pets in Boston</p></div>
-            <nav>
+            <nav id="main-nav" class="main-nav">
                 <img class="burger" id="burger" src="../../assets/icons/burger-ico-ecru.png" alt="burger menu icon">
                 <ul class="main-menu">
                     <li><mark><a href="#about">About the shelter</a></mark></li>
@@ -20,8 +20,16 @@
                     <li><a href="#help">Help the shelter</a></li>
                     <li><a href="#contacts">Contacts</a></li>
                 </ul>
-            </nav>
-        </section>              
+            </nav>          
+        </section>
+        <nav id="mobile-menu" class="mobile-menu">
+            <ul class="main-menu">
+                <li><mark><a href="#about">About the shelter</a></mark></li>
+                <li><a href="../pets/index.html">Our pets</a></li>
+                <li><a href="#help">Help the shelter</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>             
     </header>
     <main>
         <section class="start-screen-content">

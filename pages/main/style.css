@@ -111,6 +111,16 @@ h1 a:hover {
     list-style-type: none;
 }
 
+.mobile-menu {    
+    width: 0;
+    height: calc(100vh - 120px);
+    background-color: var(--color-dark-3xl);
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    transition: width 2s;
+}
+
 .main-menu li {
     display: inline-block;
     margin-left: 2.1875rem;
@@ -587,11 +597,12 @@ footer a:active {
     header, main, footer {
         width: 100%;
         margin: 0 auto;
-    }
+        position: relative;
+    }    
 
     .header-section {
-        padding: 30px 10px;
-    }
+        padding: 30px 10px;        
+    }   
 
     .burger {
         display: block;
@@ -602,6 +613,10 @@ footer a:active {
 
     .main-menu {
         display: none;
+    }
+
+    .mobile-menu.visible {        
+        width: 320px;           
     }
 
     .start-screen-content {
