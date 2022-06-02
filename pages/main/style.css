@@ -199,8 +199,7 @@ h1 a:hover {
     line-height: 130%;      
     color: #FFFFFF;
     display: inline-block;
-    margin-bottom: 2.625rem;
-    letter-spacing: 0.06em; 
+    margin-bottom: 2.625rem;    
 }
 
 .start-content p {
@@ -920,7 +919,7 @@ footer a:active {
 
     .about-description {
         width: auto;
-        margin: 0 169px;
+        margin: 0 129px;
     }
 
     .about-description p:last-child {
