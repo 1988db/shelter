@@ -16,13 +16,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
         shutter.classList.add('shutter');
         shutter.addEventListener('click', showHideMenu);        
         logoWrapper.appendChild(nav);
-        body.appendChild(shutter);
+        body.style.width = '100vw';
+        body.style.height = '100vh';
+        body.style.overflow = 'hidden';
+        body.appendChild(shutter);        
         mobileMenu = nav;
     }
 
     function deleteMobileMenu () {
         logoWrapper.removeChild(nav);
-        body.removeChild(shutter);        
+        body.removeChild(shutter);
+        body.style.width = 'auto';
+        body.style.height = 'auto';
+        body.style.overflow = 'auto';       
     }
 
     function slideIn () {
