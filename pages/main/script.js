@@ -1,33 +1,58 @@
 document.addEventListener('DOMContentLoaded', ()=> {
+    const body = document.querySelector('body');
     const burger = document.getElementById('burger');
-    const logoWrapper = document.getElementById('logo-wrapper');
-    const mainNav = document.getElementById('main-nav')
+    const logoWrapper = document.getElementById('logo-wrapper');    
     const mainMenu = document.getElementById('main-menu');
+    const clonedMenu = mainMenu.cloneNode(true);
+    const shutter = document.createElement('div');
+    let mobileMenu;
+    const nav = document.createElement('nav');
     let isMenuOpen = false;
     burger.addEventListener('click', showHideMenu);
 
+    function createMobileMenu () {
+        nav.classList.add('mobile-menu');
+        nav.appendChild(clonedMenu);
+        shutter.classList.add('shutter');
+        shutter.addEventListener('click', showHideMenu);        
+        logoWrapper.appendChild(nav);
+        body.appendChild(shutter);
+        mobileMenu = nav;
+    }
+
+    function deleteMobileMenu () {
+        logoWrapper.removeChild(nav);
+        body.removeChild(shutter);        
+    }
+
+    function slideIn () {
+        mobileMenu.classList.toggle('visible');
+        isMenuOpen = true;
+    }
+
+    function slideOut () {
+        mobileMenu.classList.toggle('visible');
+    }
+
     function showHideMenu () {
-        if(isMenuOpen) {
+        if (!isMenuOpen) {
             logoWrapper.classList.toggle('visible');
             burger.classList.toggle('visible');
-            mainNav.classList.toggle('visible');
+            createMobileMenu();
             setTimeout(()=> {
-                mainMenu.style.display = 'none';
-                mainNav.style.display = 'none';
-            }, 510);
-            isMenuOpen = false;
-            
+                slideIn();
+            }, 10)
         } else {
             logoWrapper.classList.toggle('visible');
             burger.classList.toggle('visible');
-            mainMenu.style.display = 'flex';
-            mainNav.style.display = 'flex';
-            mainNav.classList.toggle('visible');
-            isMenuOpen = true;       
+            setTimeout(()=> {
+                slideOut();
+            },10)            
+            setTimeout(()=> {                
+                deleteMobileMenu();
+            }, 511)
+            isMenuOpen = false;
         }
-        
-        
-        
     }
     
 });
