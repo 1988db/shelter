@@ -32,7 +32,7 @@
 }
 
 body {
-    position: relative;
+    position: relative;     
 }
 
 header, main, footer {
@@ -585,7 +585,7 @@ footer a:active {
     width: 254px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {    
     
     header, main, footer {
         width: 100%;
@@ -596,7 +596,7 @@ footer a:active {
     .header-section {   
         padding: 30px 10px;        
         position: relative;
-        height: 120px;           
+        height: 120px;                
     }
 
     .shutter {
@@ -658,7 +658,7 @@ footer a:active {
         position: absolute;
         top: 120px;
         right: -320px;
-        z-index: 0;
+        z-index: 0;        
         transition: all 0.5s;
     }
 
