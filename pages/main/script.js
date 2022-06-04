@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let mobileMenu;
     const nav = document.createElement('nav');
     let isMenuOpen = false;
+    const slideLeftBtn = document.getElementById('slide-left');
+    const slideRightBtn = document.getElementById('slide-right');
+    let petsRandomOrder = [];
+    let sliderFirstPosition = 0;
+    let slider = [0,1,2]; 
+    slideLeftBtn.addEventListener('click', slideLeft);
+    slideRightBtn.addEventListener('click', slideRight);
     let petsData = [
         {
             "name": "Jennifer",
@@ -99,8 +106,61 @@ document.addEventListener('DOMContentLoaded', ()=> {
           }
     ];
     
-    //pets
-    
+    //set pets random order
+
+    //count pets
+    for (i=0; i < petsData.length; i++) {
+      petsRandomOrder.push(i);      
+    }
+    //mix their order randomly
+    petsRandomOrder.sort(() => Math.random() - 0.5);
+    console.log(petsRandomOrder);
+
+    //function slide left
+    function slideLeft () {
+      //chechk slider length
+
+      //set new slider values - slider values are indexes of petsRandomOrder array
+      sliderFirstPosition = sliderFirstPosition - 3;
+      if (sliderFirstPosition < 0) { //if we are out of petsRandomOrder array we count from the end
+        sliderFirstPosition = petsRandomOrder.length + sliderFirstPosition;
+      }
+      slider[0] = sliderFirstPosition;
+      if (sliderFirstPosition + 1 > petsRandomOrder.length - 1) { //if we are out of petsRandomOrder array we count from the beginning
+        slider[1] = sliderFirstPosition + 1 - petsRandomOrder.length;
+      } else {
+        slider[1] = sliderFirstPosition + 1;
+      }
+      if (sliderFirstPosition + 2 > petsRandomOrder.length - 1) { //if we are out of petsRandomOrder array we count from the beginning
+        slider[2] = sliderFirstPosition + 2 - petsRandomOrder.length;
+      } else {
+        slider[2] = sliderFirstPosition + 2;
+      }
+      console.log(slider);
+    }
+
+    //function slide right
+    function slideRight () {
+      //chechk slider length
+
+      //set new slider values - slider values are indexes of petsRandomOrder array
+      sliderFirstPosition = sliderFirstPosition + 3;
+      if (sliderFirstPosition > petsRandomOrder.length - 1) { //if we are out of petsRandomOrder array we count from the beginning
+        sliderFirstPosition = sliderFirstPosition - petsRandomOrder.length;
+      }
+      slider[0] = sliderFirstPosition;
+      if (sliderFirstPosition + 1 > petsRandomOrder.length - 1) { //if we are out of petsRandomOrder array we count from the beginning
+        slider[1] = sliderFirstPosition + 1 - petsRandomOrder.length;
+      } else {
+        slider[1] = sliderFirstPosition + 1;
+      }
+      if (sliderFirstPosition + 2 > petsRandomOrder.length - 1) { //if we are out of petsRandomOrder array we count from the beginning
+        slider[2] = sliderFirstPosition + 2 - petsRandomOrder.length;
+      } else {
+        slider[2] = sliderFirstPosition + 2;
+      }
+      console.log(slider);
+    }
 
     //mobile menu
     burger.addEventListener('click', showHideMenu);
