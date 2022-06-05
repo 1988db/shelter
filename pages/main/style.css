@@ -31,8 +31,9 @@
     padding: 0;    
 }
 
-body {
-    position: relative;     
+html, body {
+    position: relative;
+    overflow-x: hidden;     
 }
 
 header, main, footer {
@@ -293,10 +294,33 @@ h1 a:hover {
 }
 
 .slider {    
+    width: 100%;
     display: flex;
     justify-items: center;
     align-items: center;
     margin-bottom: 3.75rem;
+    position: relative;
+
+}
+
+.slider:before {
+    position: absolute;
+    left: -1080px;
+    content: '';
+    width: 1080px;
+    height: 100%;
+    background-image: linear-gradient(to left, var(--color-light-l) 0, var(--color-light-l) 3.7077%, white 3.7037%);
+    z-index: 3;
+}
+
+.slider:after {
+    position: absolute;
+    right: -1080px;
+    content: '';
+    width: 1080px;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--color-light-l) 0, var(--color-light-l) 3.7077%, white 3.7037%);
+    z-index: 3;
 }
 
 .button-arrow {
@@ -305,6 +329,7 @@ h1 a:hover {
     border: 2px solid var(--color-primary);
     border-radius: 50%;
     cursor: pointer;
+    z-index: 3;
 }
 
 .button-arrow.left {
@@ -323,7 +348,34 @@ h1 a:hover {
     background-repeat: no-repeat;
 }
 
-.card {
+.pets-display {   
+    flex-grow: 1;
+    height: 580px;
+}
+
+.pets-wrapper {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    left: 0;
+    transition: all 1s;
+    }
+
+.pets-wrapper.left {
+    position: absolute;
+    left: -1080px;
+}
+
+.pets-wrapper.right {
+    position: absolute;
+    left: 1200px;
+}
+
+.card-wrapper {
+    display: inline-block;    
+}
+
+.card {    
     margin: 0 2.8125rem;
     text-align: center;
     background-color: var(--color-light-s);
@@ -798,9 +850,14 @@ footer a:active {
         margin-bottom: 42px;
     }
 
-    .card-wrapper {
+    .pets-display {
         width: 100%;
+        height: 439px;
         order: -1;
+    }
+    
+    .card-wrapper {
+        margin: 0 auto;
     }
 
     .card {
@@ -808,7 +865,7 @@ footer a:active {
         margin: 0 auto;                  
     }
 
-    .card-wrapper:nth-child(3), .card-wrapper:nth-child(4) {
+    .card-wrapper:nth-child(2), .card-wrapper:nth-child(3) {
         display: none;
     }
 
@@ -1046,16 +1103,21 @@ footer a:active {
         margin-bottom: 80px;
     }
 
-    .card-wrapper:nth-of-type(4) {
+    .our-pets {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .card-wrapper:nth-of-type(3) {
         display: none;
     }
 
-    .card-wrapper:nth-child(2) .card {
+    .card-wrapper:nth-child(1) .card {
         margin-left: 0;
         margin-right: 20px;
     }
 
-    .card-wrapper:nth-child(3) .card {
+    .card-wrapper:nth-child(2) .card {
         margin-right: 0;
         margin-left: 20px;
     }

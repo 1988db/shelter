@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let isMenuOpen = false;
     const slideLeftBtn = document.getElementById('slide-left');
     const slideRightBtn = document.getElementById('slide-right');
+    const petsWrapper = document.getElementById('pets-wrapper');
     let petsRandomOrder = [];
     let sliderFirstPosition = 0;
     let slider = [0,1,2]; 
@@ -136,7 +137,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
       } else {
         slider[2] = sliderFirstPosition + 2;
       }
-      console.log(slider);
+      petsWrapper.classList.add('left');
     }
 
     //function slide right
@@ -159,7 +160,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
       } else {
         slider[2] = sliderFirstPosition + 2;
       }
-      console.log(slider);
+      petsWrapper.classList.add('right');
     }
 
     //mobile menu
