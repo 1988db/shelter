@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let isMenuOpen = false;
     const slideLeftBtn = document.getElementById('slide-left');
     const slideRightBtn = document.getElementById('slide-right');
-    const petsWrapper = document.getElementById('pets-wrapper');
+    const petsDisplay = document.getElementById('pets-display');
+    let petsWrapper = document.getElementById('pets-wrapper');
     let petsRandomOrder = [];
     let sliderFirstPosition = 0;
     let slider = [0,1,2]; 
@@ -119,6 +120,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     //function slide left
     function slideLeft () {
+      //remove listener for now
+      slideLeftBtn.removeEventListener('click', slideLeft);
+      slideRightBtn.removeEventListener('click', slideRight);
       //chechk slider length
 
       //set new slider values - slider values are indexes of petsRandomOrder array
@@ -137,11 +141,29 @@ document.addEventListener('DOMContentLoaded', ()=> {
       } else {
         slider[2] = sliderFirstPosition + 2;
       }
-      petsWrapper.classList.add('left');
+      let newPetsWrapper = petsWrapper.cloneNode(true);
+      newPetsWrapper.classList.add('right');      
+      petsWrapper.classList.add('left');      
+      petsDisplay.appendChild(newPetsWrapper);
+      setTimeout(()=> slideNewWrapperLeft(newPetsWrapper), 1);
+      setTimeout(()=> {
+        petsDisplay.removeChild(petsWrapper);
+        newPetsWrapper.classList.remove('right');
+        newPetsWrapper.classList.remove('from-right');
+        petsWrapper = newPetsWrapper;
+      }, 1001);
+      //give back listener to the button
+      setTimeout(()=> {
+        slideRightBtn.addEventListener('click', slideRight);
+        slideLeftBtn.addEventListener('click', slideLeft);        
+      },1002);
     }
 
     //function slide right
     function slideRight () {
+      //remove listener from button for now
+      slideLeftBtn.removeEventListener('click', slideLeft);
+      slideRightBtn.removeEventListener('click', slideRight);    
       //chechk slider length
 
       //set new slider values - slider values are indexes of petsRandomOrder array
@@ -159,9 +181,33 @@ document.addEventListener('DOMContentLoaded', ()=> {
         slider[2] = sliderFirstPosition + 2 - petsRandomOrder.length;
       } else {
         slider[2] = sliderFirstPosition + 2;
-      }
-      petsWrapper.classList.add('right');
+      }      
+      let newPetsWrapper = petsWrapper.cloneNode(true);
+      newPetsWrapper.classList.add('left');      
+      petsWrapper.classList.add('right');      
+      petsDisplay.appendChild(newPetsWrapper);
+      setTimeout(()=> slideNewWrapperRight(newPetsWrapper), 1);
+      setTimeout(()=> {
+        petsDisplay.removeChild(petsWrapper);
+        newPetsWrapper.classList.remove('left');
+        newPetsWrapper.classList.remove('from-left');
+        petsWrapper = newPetsWrapper;
+      }, 1001);
+      setTimeout(()=> {
+        slideRightBtn.addEventListener('click', slideRight);
+        slideLeftBtn.addEventListener('click', slideLeft);
+      },1002);
     }
+
+    function slideNewWrapperLeft (wrapper) {
+      wrapper.classList.add('from-right');      
+    }
+
+    function slideNewWrapperRight (wrapper) {
+      wrapper.classList.add('from-left');      
+    }
+
+    
 
     //mobile menu
     burger.addEventListener('click', showHideMenu);

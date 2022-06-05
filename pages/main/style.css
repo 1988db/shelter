@@ -364,11 +364,22 @@ h1 a:hover {
 .pets-wrapper.left {
     position: absolute;
     left: -1080px;
+    transition: all 1s;
 }
 
 .pets-wrapper.right {
     position: absolute;
     left: 1200px;
+    transition: all 1s;
+}
+
+.pets-wrapper.from-left {    
+    left: 52px;
+    
+}
+
+.pets-wrapper.from-right {
+    left: 52px;
 }
 
 .card-wrapper {
