@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         petsPagesCount = 8;
         cardsOnPage = 6;
       } else if (screenWidth < 768) {
-        petsPagesCount = 12;
+        petsPagesCount = 16;
         cardsOnPage = 3;
       }
 
@@ -150,7 +150,43 @@ document.addEventListener('DOMContentLoaded', ()=> {
     //if width between 768 nad 1280px create 8 pages with random pets cards
 
     if (petsPagesCount == 8) {
-        console.log('8');
+        let reduced = petsPages.reduce((current,next) => {
+            return current.concat(next);
+        });
+        
+        petsPages = [];
+        let k=0;
+        for (let i=0; i<8; i++) {
+            let page = [];
+            for (j=0; j<6; j++) {
+                page.push(reduced[k]);
+                k++;
+            }
+            petsPages.push(page);
+        }       
+        console.log(reduced);
+        console.log(petsPages); 
+    }
+
+    //if width less than 768 create 16 pages with random pets cards
+
+    if (petsPagesCount == 16) {
+        let reduced = petsPages.reduce((current,next) => {
+            return current.concat(next);
+        });
+        
+        petsPages = [];
+        let k=0;
+        for (let i=0; i<16; i++) {
+            let page = [];
+            for (j=0; j<3; j++) {
+                page.push(reduced[k]);
+                k++;
+            }
+            petsPages.push(page);
+        }
+        console.log(reduced);
+        console.log(petsPages);
     }
 
     //generate first page
