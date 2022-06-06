@@ -5,69 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
     <title>Shelter</title>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1><a href="#">Cozy House</a></h1>
-            <p>Shelter for pets in Boston</p>
+        <div id="headerWrapper" class="header-wrapper">
+            <div class="logo">
+                <h1><a href="#">Cozy House</a></h1>
+                <p>Shelter for pets in Boston</p>
+            </div>
+            <nav>
+                <img id="burger" class="burger" src="../../assets/icons/burger-ico.png" alt="burger menu icon">
+                <ul id="main-menu" class="main-menu"><li><a href="../main/index.html">About the shelter</a></li><li><a class="highlited" href="#">Our pets</a></li><li><a href="../main/index.html#help">Help the shelter</a></li><li><a href="#contacts">Contacts</a></li></ul>
+            </nav>
         </div>
-        <nav>
-            <img id="burger" class="burger" src="../../assets/icons/burger-ico.png" alt="burger menu icon">
-            <ul><li><a href="../main/index.html">About the shelter</a></li><li><a class="highlited" href="#">Our pets</a></li><li><a href="../main/index.html#help">Help the shelter</a></li><li><a href="#contacts">Contacts</a></li></ul>
-        </nav>
     </header>
     <main>
         <h3 class="friends-h3">Our friends who<br>are looking for a house</h3>
         <div class="cards-container">
-            <div class="card">
-                <img src="../../assets/images/pets-katerine.png" alt="Pet photo">
-                <p>Katrine</p>
-                <div class="learn-more-btn">Learn more</div>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/pets-jennifer.png" alt="Pet photo">
-                <p>Jennifer</p>
-                <div class="learn-more-btn">Learn more</div>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/pets-woody.png" alt="Pet photo">
-                <p>Woody</p>
-                <div class="learn-more-btn">Learn more</div>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/pets-sophia.png" alt="Pet photo">
-                <p>Sophia</p>
-                <div class="learn-more-btn">Learn more</div>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/pets-timmy.png" alt="Pet photo">
-                <p>Timmy</p>
-                <div class="learn-more-btn">Learn more</div>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/pets-charly.png" alt="Pet photo">
-                <p>Charly</p>
-                <div class="learn-more-btn">Learn more</div>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/pets-scarlett.png" alt="Pet photo">
-                <p>Scarlett</p>
-                <div class="learn-more-btn">Learn more</div>
-            </div>
-            <div class="card">
-                <img src="../../assets/images/pets-freddie.png" alt="Pet photo">
-                <p>Freddie</p>
-                <div class="learn-more-btn">Learn more</div>
-            </div>
+            <div class="card"><img src="../../assets/images/pets-katrine.png" alt="Pet photo"><p>Katrine</p><div class="learn-more-btn">Learn more</div></div>
+            <div class="card"><img src="../../assets/images/pets-jennifer.png" alt="Pet photo"><p>Jennifer</p><div class="learn-more-btn">Learn more</div></div>
+            <div class="card"><img src="../../assets/images/pets-woody.png" alt="Pet photo"><p>Woody</p><div class="learn-more-btn">Learn more</div></div>
+            <div class="card"><img src="../../assets/images/pets-sophia.png" alt="Pet photo"><p>Sophia</p><div class="learn-more-btn">Learn more</div></div>
+            <div class="card"><img src="../../assets/images/pets-timmy.png" alt="Pet photo"><p>Timmy</p><div class="learn-more-btn">Learn more</div></div>
+            <div class="card"><img src="../../assets/images/pets-charly.png" alt="Pet photo"><p>Charly</p><div class="learn-more-btn">Learn more</div></div>
+            <div class="card"><img src="../../assets/images/pets-scarlett.png" alt="Pet photo"><p>Scarlett</p><div class="learn-more-btn">Learn more</div></div>
+            <div class="card"><img src="../../assets/images/pets-freddie.png" alt="Pet photo"><p>Freddie</p><div class="learn-more-btn">Learn more</div></div>
         </div>
         <div class="buttons-container">
-            <div class="slider-nav-button begining disabled" >&lt;&lt;</div>
-            <div class="slider-nav-button previous disabled" >&lt;</div>
-            <div class="slider-nav-button page-num">1</div>
-            <div class="slider-nav-button next">&gt;</div>
-            <div class="slider-nav-button end">&gt;&gt;</div>
+            <div id="firstBtn" class="slider-nav-button begining disabled" >&lt;&lt;</div>
+            <div id="prvBtn" class="slider-nav-button previous disabled" >&lt;</div>
+            <div id="pageNr" class="slider-nav-button page-num">1</div>
+            <div id="nextBtn" class="slider-nav-button next">&gt;</div>
+            <div id="lastBtn" class="slider-nav-button end">&gt;&gt;</div>
+        </div>
+        <div id="pop-up" class="pop-up">
+            <div id="pop-up-content" class="pop-up-content">
+                <div id="pop-up-close-btn" class="pop-up-close-btn"><div class="cross-wrapper"><div class="cross1"><hr></div><div class="cross2"><hr></div></div></div>
+                <div id="pop-up-img-wrapper" class="pop-up-img-wrapper">
+                    <img id="pop-up-img" class="pop-up-img" alt="Pets image">
+                </div>
+                <div id="pop-up-text-content" class="pop-up-text-content">
+                    <h3 id="pet-name" class="pet-name"></h3>
+                    <h4 id="type-breed" class="type-breed"><span id="type" class="type"></span> - <span id="breed" class="breed"></span></h4>
+                    <h5 id="description" class="description"></h5>
+                    <ul id="pet-details" class="pet-details">
+                        <li id="age" class="age"><span class="age">Age </span><span id="age-value" class="age-value"></span></li>
+                        <li id="inoculations" class="inoculations"><span class="inoculations">Inoculations </span><span id="inoculations-value" class="inoculations-value"></span></li>
+                        <li id="diseases" class="diseases"><span class="diseases">Diseases </span><span id="diseases-value" class="diseases-value"></span></li>
+                        <li id="parasites" class="parasites"><span class="parasites">Parasites </span><span id="parasites-value" class="parasites-value"></span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </main>
     <footer>

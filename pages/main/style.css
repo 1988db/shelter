@@ -31,6 +31,11 @@
     padding: 0;    
 }
 
+html, body {
+    position: relative;
+    overflow-x: hidden;     
+}
+
 header, main, footer {
     width: 1280px;
     margin: 0 auto;
@@ -52,9 +57,9 @@ section {
 }
 
 .header-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
 }
 
 .about, .our-pets, .help, .donations {
@@ -70,7 +75,7 @@ section {
 h1 a:link, h1 a:visited, h1 a:hover, h1 a:active  {
     font-family: var(--font-primary);
     font-weight: 400;
-    font-size: 1.98rem;    
+    font-size: 1.97rem;    
     line-height: 110%;    
     letter-spacing: 0.06em;
     text-decoration: none;    
@@ -199,8 +204,7 @@ h1 a:hover {
     line-height: 130%;      
     color: #FFFFFF;
     display: inline-block;
-    margin-bottom: 2.625rem;
-    letter-spacing: 0.06em; 
+    margin-bottom: 2.625rem;    
 }
 
 .start-content p {
@@ -290,10 +294,33 @@ h1 a:hover {
 }
 
 .slider {    
+    width: 100%;
     display: flex;
     justify-items: center;
     align-items: center;
     margin-bottom: 3.75rem;
+    position: relative;
+
+}
+
+.slider:before {
+    position: absolute;
+    left: -1080px;
+    content: '';
+    width: 1080px;
+    height: 100%;
+    background-image: linear-gradient(to left, var(--color-light-l) 0, var(--color-light-l) 3.7077%, white 3.7037%);
+    z-index: 3;
+}
+
+.slider:after {
+    position: absolute;
+    right: -1080px;
+    content: '';
+    width: 1080px;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--color-light-l) 0, var(--color-light-l) 3.7077%, white 3.7037%);
+    z-index: 3;
 }
 
 .button-arrow {
@@ -302,6 +329,7 @@ h1 a:hover {
     border: 2px solid var(--color-primary);
     border-radius: 50%;
     cursor: pointer;
+    z-index: 3;
 }
 
 .button-arrow.left {
@@ -320,7 +348,48 @@ h1 a:hover {
     background-repeat: no-repeat;
 }
 
-.card {
+.pets-display { 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-grow: 1;
+    height: 580px;
+}
+
+.pets-wrapper {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    left: 0;
+    transition: all 1s;
+    }
+
+.pets-wrapper.left {
+    position: absolute;
+    left: -1080px;
+    transition: all 1s;
+}
+
+.pets-wrapper.right {
+    position: absolute;
+    left: 1200px;
+    transition: all 1s;
+}
+
+.pets-wrapper.from-left {    
+    left: 52px;
+    
+}
+
+.pets-wrapper.from-right {
+    left: 52px;
+}
+
+.card-wrapper {
+    display: inline-block;    
+}
+
+.card {    
     margin: 0 2.8125rem;
     text-align: center;
     background-color: var(--color-light-s);
@@ -337,6 +406,8 @@ h1 a:hover {
 
 .card img {
     margin-bottom: 1.875rem;
+    width: 270px;
+    height: 270px;
 }
 
 .card p {
@@ -582,27 +653,282 @@ footer a:active {
     width: 254px;
 }
 
-@media screen and (max-width: 767px) {
+/*pop-up*/
 
+.pop-up {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 4;  
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(41, 41, 41, 0.6);
+}
+
+.pop-up-visible {
+    display: flex;
+}
+
+.pop-up-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    background-color: var(--color-light-s);
+    border-radius: 9px;
+    width: 900px;
+}
+
+.pop-up-img {
+    width: 500px;
+    height: 500px;
+    display: block;
+}
+
+.pop-up-text-content {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px 0 30px;
+}
+
+h3.pet-name {
+    font-family: var(--font-primary);
+    color: black;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+h4.type-breed {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    margin-bottom: 40px;
+}
+
+h5.description {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+ul.pet-details {
+    list-style: none;
+}
+
+ul.pet-details li:before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--color-primary); /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+ul.pet-details li {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    margin-bottom: 11px;
+}
+
+span.age, span.inoculations, span.diseases, span.parasites {
+    font-weight: bold;
+}
+
+.pop-up-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    position: absolute;
+    right: -43px;
+    top: -52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+}
+
+.cross-wrapper {
+    margin-top: 1px;
+   width: 14px;
+   height: 14px;
+   position: relative;
+   transform: rotate(45deg);
+}
+
+.cross1 {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: calc(50% - 2px)
+}
+
+.cross2 {
+    position: absolute;    
+    width: 12px;
+    height: 12px;
+    right: 50%;
+    transform: rotate(90deg);
+}
+
+hr {
+    border: 1px solid var(--color-dark-3xl);
+}
+
+/*pop-up*/
+
+@media screen and (max-width: 767px) {    
     
     header, main, footer {
         width: 100%;
         margin: 0 auto;
+        position: relative;
+    }    
+
+    .header-section {   
+        padding: 30px 10px;        
+        position: relative;
+        height: 120px;                
     }
 
-    .header-section {
-        padding: 30px 10px;
+    .shutter {
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        background: rgba(41, 41, 41, 0.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+    .logo-wrapper {
+        padding: 30px 10px;  
+        position: absolute;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 120px;
+        align-items: center;
+        z-index: 2;
+        transition: 0.5s;
+    }
+
+    .logo-wrapper.visible {
+        width: 320px;
+        background-color: var(--color-dark-3xl);
+    }
+
+    .burger-wrapper {
+        padding: 0 43px;
     }
 
     .burger {
         display: block;
         width: 30px;
         height: 22px;
-        margin: 0 43px;
+        transition: transform 0.5s;      
     }
 
-    .main-menu {
+    .burger.visible {
+        transform: rotate(-90deg);
+    }
+
+    .main-nav {
         display: none;
+    }
+
+    .mobile-menu {   
+        display: flex;     
+        width: 320px;
+        height: calc(100vh - 120px);        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 120px;
+        right: -320px;
+        z-index: 0;        
+        transition: all 0.5s;
+    }
+
+    .mobile-menu.visible {
+        background-color: var(--color-dark-3xl);
+        right: 0;
+        z-index: 2;
+    }
+
+    .main-menu {    
+        display: flex;    
+        margin-bottom: 120px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 40px;
+        text-align: center;
+    }
+
+    .mobile-menu li {
+        display: block;
+        margin: 0;
+    }
+
+    .mobile-menu a:link {
+        font-family: var(--font-secondary);
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 160%;    
+        color: var(--color-dark-s);
+        text-decoration: none;  
+    }
+    
+    .mobile-menu a:visited {
+        font-family: var(--font-secondary);
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 160%;    
+        color: var(--color-dark-s);
+        text-decoration: none;   
+    }
+    
+    .mobile-menu a:hover {
+        font-family: var(--font-secondary);
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 160%;    
+        color: var(--color-light-s);
+        text-decoration: none;   
+    }
+    
+    .mobile-menu a:active {
+        font-family: var(--font-secondary);
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 160%;    
+        color: var(--color-dark-s);
+        text-decoration: none;   
+    }
+
+    .mobile-menu li mark {
+        padding-bottom: 8px;
     }
 
     .start-screen-content {
@@ -618,6 +944,7 @@ footer a:active {
 
     .start-screen-content h2 {
         font-size: 25px;
+        letter-spacing: 0.06em;
     }
 
     .button-primary {
@@ -679,9 +1006,14 @@ footer a:active {
         margin-bottom: 42px;
     }
 
-    .card-wrapper {
+    .pets-display {
         width: 100%;
+        height: 439px;
         order: -1;
+    }
+    
+    .card-wrapper {
+        margin: 0 auto;
     }
 
     .card {
@@ -689,7 +1021,7 @@ footer a:active {
         margin: 0 auto;                  
     }
 
-    .card-wrapper:nth-child(3), .card-wrapper:nth-child(4) {
+    .card-wrapper:nth-child(2), .card-wrapper:nth-child(3) {
         display: none;
     }
 
@@ -866,6 +1198,120 @@ footer a:active {
         width: 260px;
         height: 269px;
     }
+
+    /*pop-up*/
+
+    .pop-up {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 4;        
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(41, 41, 41, 0.6);
+      }
+      
+      .pop-up-visible {
+          display: flex;
+      }
+      
+      .pop-up-content {
+          width: 240px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          position: relative;
+          background-color: var(--color-light-s);
+          border-radius: 9px;          
+      }
+      
+      .pop-up-img-wrapper {
+        display: none;
+      }
+      
+      .pop-up-text-content {          
+          display: flex;
+          flex-direction: column;
+          padding: 10px 10px 0 10px;
+      }
+      
+      h3.pet-name {
+          font-size: 35px;
+          margin-bottom: 10px;
+      }
+
+      h4.type-breed {
+          margin-bottom: 20px;
+      }
+            
+      h5.description {          
+          font-size: 13px;          
+          margin-bottom: 40px;
+          font-weight: 400;
+          margin-bottom: 24px;
+      }
+      
+      ul.pet-details {
+          list-style: none;
+          margin-bottom: 5px;
+      }     
+            
+      ul.pet-details li {
+          margin-bottom: 6px;
+          padding-left: 1rem;
+      }
+      
+      span.age, span.inoculations, span.diseases, span.parasites {
+          font-weight: bold;
+      }
+      
+      .pop-up-close-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;    
+          position: absolute;
+          right: -26px;
+          top: -52px;
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          border: 2px solid var(--color-primary);
+      }
+      
+      .cross-wrapper {
+          margin-top: 1px;
+         width: 14px;
+         height: 14px;
+         position: relative;
+         transform: rotate(45deg);
+      }
+      
+      .cross1 {
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          top: calc(50% - 2px)
+      }
+      
+      .cross2 {
+          position: absolute;    
+          width: 12px;
+          height: 12px;
+          right: 50%;
+          transform: rotate(90deg);
+      }
+      
+      hr {
+          border: 1px solid var(--color-dark-3xl);
+      }
+
+    /*pop-up*/
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -920,23 +1366,28 @@ footer a:active {
 
     .about-description {
         width: auto;
-        margin: 0 169px;
+        margin: 0 129px;
     }
 
     .about-description p:last-child {
         margin-bottom: 80px;
     }
 
-    .card-wrapper:nth-of-type(4) {
+    .our-pets {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .card-wrapper:nth-of-type(3) {
         display: none;
     }
 
-    .card-wrapper:nth-child(2) .card {
+    .card-wrapper:nth-child(1) .card {
         margin-left: 0;
         margin-right: 20px;
     }
 
-    .card-wrapper:nth-child(3) .card {
+    .card-wrapper:nth-child(2) .card {
         margin-right: 0;
         margin-left: 20px;
     }
@@ -1016,4 +1467,144 @@ footer a:active {
     .location-wrapper:first-of-type {
         margin-top: 33px;
     }
+    /*pop-up*/
+
+.pop-up {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 4;    
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(41, 41, 41, 0.6);
+  }
+  
+  .pop-up-visible {
+      display: flex;
+  }
+  
+  .pop-up-content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      background-color: var(--color-light-s);
+      border-radius: 9px;
+      width: 630px;
+  }
+  
+  .pop-up-img {
+      width: 350px;
+      height: 350px;
+      display: block;
+  }
+  
+  .pop-up-text-content {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+  }
+  
+  h3.pet-name {
+      font-family: var(--font-primary);
+      color: black;
+      font-size: 35px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      text-align: left;
+  }
+  
+  h4.type-breed {
+      font-family: var(--font-primary);
+      font-size: 20px;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+  }
+  
+  h5.description {
+      font-family: var(--font-primary);
+      font-size: 13px;
+      line-height: 110%;
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+      font-weight: 400;
+  }
+  
+  ul.pet-details {
+      list-style: none;
+  }
+  
+  ul.pet-details li:before {
+      content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: var(--color-primary); /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em; /* Also needed for space (tweak if needed) */
+      margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+  
+  ul.pet-details li {
+      font-family: 'Georgia';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 110%;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      padding-left: 1em;
+  }
+  
+  span.age, span.inoculations, span.diseases, span.parasites {
+      font-weight: bold;
+  }
+  
+  .pop-up-close-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;    
+      position: absolute;
+      right: -43px;
+      top: -52px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--color-primary);
+  }
+  
+  .cross-wrapper {
+      margin-top: 1px;
+     width: 14px;
+     height: 14px;
+     position: relative;
+     transform: rotate(45deg);
+  }
+  
+  .cross1 {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: calc(50% - 2px)
+  }
+  
+  .cross2 {
+      position: absolute;    
+      width: 12px;
+      height: 12px;
+      right: 50%;
+      transform: rotate(90deg);
+  }
+  
+  hr {
+      border: 1px solid var(--color-dark-3xl);
+  }
+  
+  /*pop-up*/
 }
