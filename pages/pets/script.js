@@ -217,9 +217,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
     }
 
     function generatePages() {
-        for (i=0; i<cardsOnPage; i++) {                       
+        for (i=0; i<cardsOnPage; i++) {
+            cards[i].dataset.index = petsPages[currentPage-1][i];                      
             cards[i].children[0].setAttribute('src', petsData[petsPages[currentPage-1][i]].img);
-            
+            cards[i].children[1].textContent = petsData[petsPages[currentPage-1][i]].name;
         }
     }
 
