@@ -147,6 +147,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
         petsPages.push(indexesArray);
     }
 
+    //if width between 768 nad 1280px create 8 pages with random pets cards
+
+    if (petsPagesCount == 8) {
+        console.log('8');
+    }
+
     //generate first page
 
     generatePages();
@@ -215,7 +221,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         pageNr.textContent = currentPage;
         generatePages();        
     }
-
+    
     function generatePages() {
         for (i=0; i<cardsOnPage; i++) {
             cards[i].dataset.index = petsPages[currentPage-1][i];                      
