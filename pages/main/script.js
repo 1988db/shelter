@@ -9,6 +9,20 @@ document.addEventListener('DOMContentLoaded', ()=> {
     let mobileMenu;
     const nav = document.createElement('nav');
     let isMenuOpen = false;
+    
+    const popUp = document.getElementById('pop-up');
+    const popUpContent = document.getElementById('pop-up-content');
+    const popUpClose = document.getElementById('pop-up-close-btn');
+    const petName = document.getElementById('pet-name');
+    const popUpImg = document.getElementById('pop-up-img');
+    const petType = document.getElementById('type');
+    const petBreed = document.getElementById('breed');
+    const petDescription = document.getElementById('description');
+    const petAgeValue = document.getElementById('age-value');
+    const petInoculationsValue = document.getElementById('inoculations-value');
+    const petDiesasesValue = document.getElementById('diseases-value');
+    const petParasitesValue = document.getElementById('parasites-value')
+
     const slideLeftBtn = document.getElementById('slide-left');
     const slideRightBtn = document.getElementById('slide-right');
     const petsDisplay = document.getElementById('pets-display');
@@ -130,6 +144,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
     function generatePetsCards (className) {
       let cards = document.querySelectorAll(className);
       for (let i=0; i<slider.length; i++) {
+        cards[i].dataset.index = petsRandomOrder[slider[i]];        
+        cards[i].addEventListener('click', openPopUp);
         cards[i].children[0].setAttribute('src', petsData[petsRandomOrder[slider[i]]].img);
         cards[i].children[1].textContent = petsData[petsRandomOrder[slider[i]]].name;        
       }
@@ -278,7 +294,29 @@ document.addEventListener('DOMContentLoaded', ()=> {
       wrapper.classList.add('from-left');      
     }
 
-    
+    //open opo-up
+    function openPopUp (e) {
+      let petIndex = e.target.closest('.card').dataset.index;
+      popUp.classList.toggle('pop-up-visible');
+      popUpImg.setAttribute('src', petsData[petIndex].img);
+      petName.textContent = petsData[petIndex].name;
+      petType.textContent = petsData[petIndex].type;
+      petBreed.textContent = petsData[petIndex].breed;
+      petDescription.textContent = petsData[petIndex].description;
+      petAgeValue.textContent = petsData[petIndex].age;
+      petInoculationsValue.textContent = petsData[petIndex].inoculations;
+      petDiesasesValue.textContent = petsData[petIndex].diseases;
+      petParasitesValue.textContent = petsData[petIndex].parasites;
+    }
+
+    //close pop-up
+    popUp.addEventListener('click', closePopUp);
+    popUpClose.addEventListener('click', closePopUp);
+    popUpContent.addEventListener('click', (e)=> e.stopPropagation());
+
+    function closePopUp () {
+      popUp.classList.toggle('pop-up-visible');
+    }
 
     //mobile menu
     burger.addEventListener('click', showHideMenu);
