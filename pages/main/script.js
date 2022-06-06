@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const petAgeValue = document.getElementById('age-value');
     const petInoculationsValue = document.getElementById('inoculations-value');
     const petDiesasesValue = document.getElementById('diseases-value');
-    const petParasitesValue = document.getElementById('parasites-value')
+    const petParasitesValue = document.getElementById('parasites-value');
 
     const slideLeftBtn = document.getElementById('slide-left');
     const slideRightBtn = document.getElementById('slide-right');
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
       slideLeftBtn.removeEventListener('click', slideLeft);
       slideRightBtn.removeEventListener('click', slideRight);
       //chechk slider length
-      console.log(slider)
+      
       //set new slider values - slider values are indexes of petsRandomOrder array
       if (slider.length === 3) {
         sliderFirstPosition = sliderFirstPosition - 3;
@@ -216,8 +216,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
       setTimeout(()=> {
         slideRightBtn.addEventListener('click', slideRight);
         slideLeftBtn.addEventListener('click', slideLeft);        
-      },1002);
-      console.log(slider);
+      },1002);      
     }
 
     //function slide right
@@ -284,7 +283,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         slideRightBtn.addEventListener('click', slideRight);
         slideLeftBtn.addEventListener('click', slideLeft);
       },1002);
-      console.log(slider);
+      
     }
 
     function slideNewWrapperLeft (wrapper) {
@@ -295,7 +294,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
       wrapper.classList.add('from-left');      
     }
 
-    //open opo-up
+    //open pop-up
     function openPopUp (e) {
       let petIndex = e.target.closest('.card').dataset.index;
       popUp.classList.toggle('pop-up-visible');
