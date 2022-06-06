@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=> {
     const screenWidth = screen.width;
+    const html = document.querySelector('html');
     const body = document.querySelector('body');
     const burger = document.getElementById('burger');
     const logoWrapper = document.getElementById('logo-wrapper');    
@@ -298,6 +299,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
     function openPopUp (e) {
       let petIndex = e.target.closest('.card').dataset.index;
       popUp.classList.toggle('pop-up-visible');
+      html.style.overflowY = 'hidden';
+      body.style.overflowY = 'hidden';
       popUpImg.setAttribute('src', petsData[petIndex].img);
       petName.textContent = petsData[petIndex].name;
       petType.textContent = petsData[petIndex].type;
@@ -316,6 +319,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     function closePopUp () {
       popUp.classList.toggle('pop-up-visible');
+      html.style.overflowY = 'auto';
+      body.style.overflowY = 'auto';
     }
 
     //mobile menu

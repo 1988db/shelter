@@ -660,13 +660,13 @@ footer a:active {
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 4;
-  padding-top: 100px;
+  z-index: 4;  
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(41, 41, 41, 0.6);
 }
@@ -737,7 +737,7 @@ ul.pet-details li:before {
     margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
-ul.pets-details li {
+ul.pet-details li {
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 700;
@@ -1198,6 +1198,120 @@ hr {
         width: 260px;
         height: 269px;
     }
+
+    /*pop-up*/
+
+    .pop-up {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 4;        
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(41, 41, 41, 0.6);
+      }
+      
+      .pop-up-visible {
+          display: flex;
+      }
+      
+      .pop-up-content {
+          width: 240px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          position: relative;
+          background-color: var(--color-light-s);
+          border-radius: 9px;          
+      }
+      
+      .pop-up-img-wrapper {
+        display: none;
+      }
+      
+      .pop-up-text-content {          
+          display: flex;
+          flex-direction: column;
+          padding: 10px 10px 0 10px;
+      }
+      
+      h3.pet-name {
+          font-size: 35px;
+          margin-bottom: 10px;
+      }
+
+      h4.type-breed {
+          margin-bottom: 20px;
+      }
+            
+      h5.description {          
+          font-size: 13px;          
+          margin-bottom: 40px;
+          font-weight: 400;
+          margin-bottom: 24px;
+      }
+      
+      ul.pet-details {
+          list-style: none;
+          margin-bottom: 5px;
+      }     
+            
+      ul.pet-details li {
+          margin-bottom: 6px;
+          padding-left: 1rem;
+      }
+      
+      span.age, span.inoculations, span.diseases, span.parasites {
+          font-weight: bold;
+      }
+      
+      .pop-up-close-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;    
+          position: absolute;
+          right: -26px;
+          top: -52px;
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          border: 2px solid var(--color-primary);
+      }
+      
+      .cross-wrapper {
+          margin-top: 1px;
+         width: 14px;
+         height: 14px;
+         position: relative;
+         transform: rotate(45deg);
+      }
+      
+      .cross1 {
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          top: calc(50% - 2px)
+      }
+      
+      .cross2 {
+          position: absolute;    
+          width: 12px;
+          height: 12px;
+          right: 50%;
+          transform: rotate(90deg);
+      }
+      
+      hr {
+          border: 1px solid var(--color-dark-3xl);
+      }
+
+    /*pop-up*/
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -1353,4 +1467,144 @@ hr {
     .location-wrapper:first-of-type {
         margin-top: 33px;
     }
+    /*pop-up*/
+
+.pop-up {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 4;    
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(41, 41, 41, 0.6);
+  }
+  
+  .pop-up-visible {
+      display: flex;
+  }
+  
+  .pop-up-content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      background-color: var(--color-light-s);
+      border-radius: 9px;
+      width: 630px;
+  }
+  
+  .pop-up-img {
+      width: 350px;
+      height: 350px;
+      display: block;
+  }
+  
+  .pop-up-text-content {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+  }
+  
+  h3.pet-name {
+      font-family: var(--font-primary);
+      color: black;
+      font-size: 35px;
+      line-height: 130%;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      text-align: left;
+  }
+  
+  h4.type-breed {
+      font-family: var(--font-primary);
+      font-size: 20px;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+  }
+  
+  h5.description {
+      font-family: var(--font-primary);
+      font-size: 13px;
+      line-height: 110%;
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+      font-weight: 400;
+  }
+  
+  ul.pet-details {
+      list-style: none;
+  }
+  
+  ul.pet-details li:before {
+      content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: var(--color-primary); /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em; /* Also needed for space (tweak if needed) */
+      margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+  
+  ul.pet-details li {
+      font-family: 'Georgia';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 110%;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      padding-left: 1em;
+  }
+  
+  span.age, span.inoculations, span.diseases, span.parasites {
+      font-weight: bold;
+  }
+  
+  .pop-up-close-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;    
+      position: absolute;
+      right: -43px;
+      top: -52px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--color-primary);
+  }
+  
+  .cross-wrapper {
+      margin-top: 1px;
+     width: 14px;
+     height: 14px;
+     position: relative;
+     transform: rotate(45deg);
+  }
+  
+  .cross1 {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: calc(50% - 2px)
+  }
+  
+  .cross2 {
+      position: absolute;    
+      width: 12px;
+      height: 12px;
+      right: 50%;
+      transform: rotate(90deg);
+  }
+  
+  hr {
+      border: 1px solid var(--color-dark-3xl);
+  }
+  
+  /*pop-up*/
 }
